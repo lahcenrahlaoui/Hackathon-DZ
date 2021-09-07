@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Kufam:wght@400;500;600;700;800;900&display=swap');
+
+html, body, button, input, optgroup, select, textarea {
+  font-family: 'Kufam', serif !important;
+
+}
+* {
+  font-family: 'Kufam', serif !important;
+  letter-spacing: .5px !important;
+}
+.v-application .text-h1{
+  font-family: 'Kufam', serif !important;
+}
+.v-application .text-h2{
+  font-family: 'Kufam', serif !important;
+}
+.v-application .text-h3{
+  font-family: 'Kufam', serif !important;
+}
+.v-application .text-h4{
+  font-family: 'Kufam', serif !important;
+}
+.v-application .text-h5{
+  font-family: 'Kufam', serif !important;
+}
+.v-application .text-h6{
+  font-family: 'Kufam', serif !important;
+}
+.text-body-1{
+  font-family: 'Kufam', serif !important;
+}
+.layout-enter-active, .layout-leave-to {
+  transition: opacity .5s;
+}
+.layout-enter, .layout-leave-to {
+  opacity: 0;
+}
+.fab {
+  font-family: 'Font Awesome 5 Brands', serif !important;
+  font-size: 20px !important;
+}
+
+.fa, .fas {
+  font-family: 'Font Awesome 5 Free', serif !important;
+  font-weight: bold;
+}
