@@ -31,7 +31,6 @@ export default {
   plugins: [
     '@/plugins/countdown',
     '@/plugins/gtag',
-    '@/plugins/scroll'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
