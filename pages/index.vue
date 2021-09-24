@@ -16,7 +16,7 @@
           <v-btn rounded x-small text>Agenda</v-btn>
           <v-btn rounded x-small text>FAQ</v-btn>
           <v-btn rounded x-small text>Contact</v-btn>
-          <v-btn rounded outlined small color='primary'>Register in HACKATHON</v-btn>
+          <v-btn rounded outlined small color='primary' >Registeration SOON</v-btn>
 
         </v-app-bar>
         <v-card-title class='flex-row text-break'>
@@ -35,7 +35,7 @@
                   HACK FOR <span class='primary--text'> ALGERIA</span>
                 </h1>
                 <br />
-                <v-btn color='primary' rounded width='300'>REGISTER IN HACKATHON DZ</v-btn>
+                <v-btn color='primary' rounded width='300'>REGISTERATION IS SOON</v-btn>
               </div>
             </v-col>
           </v-row>
@@ -121,19 +121,73 @@
       <br />
       <v-divider style='width:250px' class='primary mx-auto'></v-divider>
       <br /> <br /> <br />
-      <v-row>
-        <v-col :offset='partners.indexOf(partner)===3 && $vuetify.breakpoint.lgAndUp ? 4:0 ' cols='12' lg='4'
-               class='pa-2' v-for='partner in partners'>
-          <div class='module-border-wrap rounded-xl'>
-            <v-card height='400' light link :href='partner.url' class='pa-1 pa-lg-5  rounded-xl'>
+      <v-row class=' white rounded-t-xl'>
+        <v-col  cols='12' lg='4'
+               class='pa-2' v-for='partner in partners1'>
+          <div class=' rounded-xl'>
+            <v-card height='250' light link :href='partner.url' elevation='0' class='pa-1 pa-lg-3 rounded-xl'>
               <v-container fill-height>
                 <v-row class='justify-center align-center'>
                   <v-col>
                     <v-card-title class='justify-center'>
-                      <img width='250' :src='partner.img' />
+                      <img width='100' :title='partner.name' :alt='partner.name' :src='partner.img' />
                     </v-card-title>
                     <v-card-text class='text-center'>
-                      <h2 class='font-weight-black' v-text='partner.name'></h2>
+                      <h2 class='font-weight-bold' v-text='partner.name'></h2>
+                    </v-card-text>
+                  </v-col>
+                </v-row>
+              </v-container>
+
+            </v-card>
+
+          </div>
+        </v-col>
+      </v-row>
+      <v-row class=' white rounded-b-xl'>
+        <v-col  cols='12' lg='4'
+                class='pa-2' v-for='partner in partners2'>
+          <div class=' rounded-xl'>
+            <v-card height='250' light link :href='partner.url' elevation='0' class='pa-1 pa-lg-3 rounded-xl'>
+              <v-container fill-height>
+                <v-row class='justify-center align-center'>
+                  <v-col>
+                    <v-card-title class='justify-center'>
+                      <img width='100' :title='partner.name' :alt='partner.name' :src='partner.img' />
+                    </v-card-title>
+                    <v-card-text class='text-center'>
+                      <h2 class='font-weight-bold' v-text='partner.name'></h2>
+                    </v-card-text>
+                  </v-col>
+                </v-row>
+              </v-container>
+
+            </v-card>
+
+          </div>
+        </v-col>
+      </v-row>
+
+    </section>
+    <section class='mb-15 mt-15 pt-15 px-5 px-lg-10 text-center'>
+      <h2 class='text-h2 font-weight-bold' style="font-family: 'Montserrat', serif !important"> Our Sponsors
+      </h2>
+      <br />
+      <v-divider style='width:250px' class='primary mx-auto'></v-divider>
+      <br /> <br /> <br />
+      <v-row class=' white rounded-xl'>
+        <v-col  cols='12' lg='4'
+                class='pa-2' v-for='sponsor in sponsors'>
+          <div class=' rounded-xl'>
+            <v-card height='400' light link :href='sponsor.url' elevation='0' class='pa-1 pa-lg-3 rounded-xl'>
+              <v-container fill-height>
+                <v-row class='justify-center align-center'>
+                  <v-col>
+                    <v-card-title class='justify-center'>
+                      <img width='150' :title='sponsor.name' :alt='sponsor.name' :src='sponsor.img' />
+                    </v-card-title>
+                    <v-card-text class='text-center'>
+                      <h2 class='font-weight-bold' v-text='sponsor.name'></h2>
                     </v-card-text>
                   </v-col>
                 </v-row>
@@ -244,16 +298,43 @@
         </v-col>
       </v-row>
     </section>
+    <!-- Messenger Chat Plugin Code -->
+    <div id="fb-root"></div>
+
+    <!-- Your Chat Plugin code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
 
 
   </div>
 </template>
+
+
 <script>
 import { gsap } from 'gsap'
 
 export default {
   layout: 'indexLayout',
   mounted() {
+    var chatbox = document.getElementById('fb-customer-chat');
+    chatbox.setAttribute("page_id", "105574008533977");
+    chatbox.setAttribute("attribution", "biz_inbox");
+
+    window.fbAsyncInit = function() {
+      FB.init({
+        xfbml            : true,
+        version          : 'v12.0'
+      });
+    };
+
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
     const { hackdz } = this.$refs
     gsap.from(hackdz, { opacity: 0, duration: 1, x: 50 })
     gsap.from('#startDateDesktop', { duration: 2, opacity: -1 })
@@ -262,28 +343,61 @@ export default {
   data() {
     return {
       drawer: false,
-      partners: [
+      partners1: [
+
+        {
+          name: 'Ministry of Youth and Sports',
+          img: '/partnership/biskra.png',
+          url: 'https://www.mjs.gov.dz/'
+        },
         {
           name: 'Wilaya of Biskra',
           img: '/partnership/biskra.png',
-          url: ''
+          url: 'http://www.wilayabiskra.dz/'
         },
         {
-          name: 'Biskra TAKRAA Association',
-          img: '/partnership/biskra_takraa.jpg',
-          url: 'https://www.facebook.com/biskrareads07/'
+          name: 'Ministry of Culture and Arts',
+          img: 'https://m-culture.gov.dz/templates/Culture/images/logo_culture.png',
+          url: 'https://m-culture.gov.dz/'
         },
+      ],
+      partners2:[
         {
-          name: 'Centre de recherche scientifique et technique sur les régions arides (CRSTRA)',
+          name: 'Scientific and Technical Research Center on Arid Regions',
           img: '/partnership/crstra.png',
           url: 'https://www.crstra.dz/'
         },
         {
-          name: 'Ministry of Youth and Sports',
-          img: '/partnership/biskra.png',
+          name: 'Directorate of Youth and Sports Biskra',
+          img: '/partnership/djsbiskra.png',
           url: ''
-        }
+        },
+        {
+          name: 'Chamber of Traditional Industry and Crafts in Biskra',
+          img: '/partnership/cambiskra.jpg',
+          url: 'https://web.facebook.com/%D8%BA%D8%B1%D9%81%D8%A9-%D8%A7%D9%84%D8%B5%D9%86%D8%A7%D8%B9%D8%A9-%D8%A7%D9%84%D8%AA%D9%82%D9%84%D9%8A%D8%AF%D9%8A%D8%A9-%D9%88-%D8%A7%D9%84%D8%AD%D8%B1%D9%81-%D9%84%D8%A8%D8%B3%D9%83%D8%B1%D8%A9-179606028737807'
+        },
+
       ],
+      sponsors:[
+        {
+          name: 'Sonelgaz',
+          img: '/sponsors/sonelgaz.jpg',
+          url: 'https://www.sonelgaz.dz/'
+        },
+        {
+          name: 'NBbiskra Formation',
+          img: '/sponsors/nbformation.jpg',
+          url: 'https://web.facebook.com/NBBiskraformation'
+        },
+        {
+          name: 'Naftal',
+          img: '/sponsors/naftal.jpg',
+          url: 'https://www.naftal.dz/'
+        },
+
+      ],
+
       agenda: [
         {
           title: 'First Day - 29/10/2021',
