@@ -1,10 +1,7 @@
-import colors from 'vuetify/es5/util/colors'
-
-export default {
+const colors = require('vuetify/es5/util/colors')
+module.exports = {
   // Global page headers: https://go.nuxtjs.dev/config-head
-  generate: {
-    dir: 'public'
-  },
+  ssr:false,
   head: {
     titleTemplate: '%s - Hackathon DZ',
     title: 'Hackathon DZ',
@@ -29,12 +26,15 @@ export default {
     '@/assets/css/fonts.css',
     '@/assets/css/main.css',
     '@/assets/css/animate.css',
+    '@fortawesome/fontawesome-free/css/all.css',
 
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     '@/plugins/gtag',
+    '@/plugins/countdown',
+    '@/plugins/sweetAlert2.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -43,18 +43,62 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
-    '@nuxtjs/vuetify'
+    '@nuxtjs/vuetify',
+    '@nuxtjs/google-fonts',
+
   ],
+
+  googleFonts:{
+    families: {
+      Kufam: {
+        wght: [100, 400,500,900],
+      },
+    }
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/i18n',
+    'cookie-universal-nuxt',
+
   ],
+  i18n: {
+    lazy: true,
+    locales: [
+      {
+        name: 'العربية',
+        code: 'ar',
+        iso: 'ar',
+        file: 'ar-DZ.js'
+      },
+      {
+        name: 'English',
+        code: 'en',
+        iso: 'en',
+        file: 'en-US.js'
+      }
+    ],
+    loadLanguagesAsync: true,
+
+    langDir: 'locales/',
+    defaultLocale: 'en',
+    vueI18n: {
+      fallbackLocale: 'en'
+    },
+    detectBrowserLanguage: {
+      useCookie: true,
+      alwaysRedirect: true,
+      cookieKey: 'i18n'
+    },
+    seo: true
+  },
+
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: 'http://localhost:8000/api/v1/',
+    baseURL: 'https://api.hackathon2021.dz/api/v1/', /* 'http://localhost:8000/api/v1/'*/
   },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
@@ -69,12 +113,12 @@ export default {
         },
         dark: {
           primary: '#00dd86',
-          accent: colors.grey.darken3,
+          /*accent: colors.grey['darken3'],
           secondary: colors.amber.darken3,
-          info: colors.teal.lighten1,
-          warning: colors.amber.base,
-          error: colors.deepOrange.accent4,
-          success: colors.green.accent3
+          info: colors.teal.lighten1,*/
+          warning: '#ffc107',
+          /*error: colors.deepOrange.accent4,
+          success: colors.green.accent3*/
         }
       }
     }

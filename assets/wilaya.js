@@ -1,6 +1,6 @@
 var list = [
-  { 'id': '1', 'name': 'Adrar', 'ar_name': 'أدرار' },
-  { 'id': '2', 'name': 'Chlef', 'ar_name': 'الشلف' },
+  {'id': '1', 'name': 'Adrar', 'ar_name': 'أدرار'},
+  {'id': '2', 'name': 'Chlef', 'ar_name': 'الشلف'},
   {
     'id': '3',
     'name': 'Laghouat',
@@ -13,11 +13,11 @@ var list = [
     'ar_name': 'أم البواقي'
 
   },
-  { 'id': '5', 'name': 'Batna', 'ar_name': 'باتنة' },
-  { 'id': '6', 'name': 'Béjaïa', 'ar_name': 'بجاية' },
-  { 'id': '7', 'name': 'Biskra', 'ar_name': 'بسكرة' },
-  { 'id': '8', 'name': 'Bechar', 'ar_name': 'بشار' },
-  { 'id': '9', 'name': 'Blida', 'ar_name': 'البليدة' },
+  {'id': '5', 'name': 'Batna', 'ar_name': 'باتنة'},
+  {'id': '6', 'name': 'Béjaïa', 'ar_name': 'بجاية'},
+  {'id': '7', 'name': 'Biskra', 'ar_name': 'بسكرة'},
+  {'id': '8', 'name': 'Bechar', 'ar_name': 'بشار'},
+  {'id': '9', 'name': 'Blida', 'ar_name': 'البليدة'},
   {
     'id': '10',
     'name': 'Bouira',
@@ -30,7 +30,7 @@ var list = [
     'ar_name': 'تمنراست'
 
   },
-  { 'id': '12', 'name': 'Tbessa', 'ar_name': 'تبسة' },
+  {'id': '12', 'name': 'Tbessa', 'ar_name': 'تبسة'},
   {
     'id': '13',
     'name': 'Tlemcen',
@@ -60,9 +60,9 @@ var list = [
     'name': 'Djelfa',
     'ar_name': 'الجلفة'
   },
-  { 'id': '18', 'name': 'Jijel', 'ar_name': 'جيجل' },
-  { 'id': '19', 'name': 'Se9tif', 'ar_name': 'سطيف' },
-  { 'id': '20', 'name': 'Saefda', 'ar_name': 'سعيدة' },
+  {'id': '18', 'name': 'Jijel', 'ar_name': 'جيجل'},
+  {'id': '19', 'name': 'Se9tif', 'ar_name': 'سطيف'},
+  {'id': '20', 'name': 'Saefda', 'ar_name': 'سعيدة'},
   {
     'id': '21',
     'name': 'Skikda',
@@ -116,7 +116,7 @@ var list = [
     'name': 'Ouargla',
     'ar_name': 'ورقلة'
   },
-  { 'id': '31', 'name': 'Oran', 'ar_name': 'وهران' },
+  {'id': '31', 'name': 'Oran', 'ar_name': 'وهران'},
   {
     'id': '32',
     'name': 'El Bayadh',
@@ -209,6 +209,55 @@ var list = [
     'id': '48',
     'name': 'Relizane',
     'ar_name': 'غليزان'
-  }
+  },
+  {
+    'id': '49',
+    'name': 'El M\'Ghair\t',
+    'ar_name': 'المغير'
+  },
+  {
+    'id': '50',
+    'name': 'El Menia\t',
+    'ar_name': 'المنيعة'
+  },
+  {
+    'id': '51',
+    'name': 'Ouled Djellal\t',
+    'ar_name': 'أولاد جلال'
+  },
+  {
+    'id': '52',
+    'name': 'Bordj Baji Mokhtar\t',
+    'ar_name': 'برج باجي مختار'
+  },
+  {
+    'id': '53',
+    'name': 'Béni Abbès\t',
+    'ar_name': 'بني عباس'
+  },
+  {
+    'id': '54',
+    'name': 'Timimoun\t',
+    'ar_name': 'تيميمون'
+  }, {
+    'id': '55',
+    'name': 'Touggourt\t',
+    'ar_name': 'تقرت'
+  }, {
+    'id': '56',
+    'name': 'Djanet\t',
+    'ar_name': 'جانت'
+  }, {
+    'id': '57',
+    'name': 'In Salah\t',
+    'ar_name': 'عين صالح'
+  },
+  {
+    'id': '58',
+    'name': 'In Guezzam\t',
+    'ar_name': 'عين قزام'
+  },
+
+
 ]
 export default list;

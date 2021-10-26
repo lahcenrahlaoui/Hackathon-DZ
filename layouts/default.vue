@@ -1,5 +1,5 @@
 <template>
-  <v-app dark>
+  <v-app dark class='theme--dark'>
     <v-app-bar class='hidden-md-and-down mt-10 px-5' elevation='0' color='transparent'>
       <img width='100' src='/logo/logo.png'/>
       <v-spacer></v-spacer>
